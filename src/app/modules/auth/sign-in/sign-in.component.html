@@ -2,7 +2,7 @@
     <div class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card">
         <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
             <!-- Logo -->
-            <div class="w-40">
+            <div class="w-30">
                 <img src="assets/images/logo/logo-1.svg">
             </div>
 
@@ -15,15 +15,6 @@
                     [routerLink]="['/sign-up']">Sign up
                 </a>
             </div>
-
-            <!-- Alert -->
-            <fuse-alert
-                class="mt-8"
-                [appearance]="'outline'"
-                [showIcon]="false"
-                [type]="'info'">
-                You are browsing <strong>Fuse Demo</strong>. Click on the "Sign in" button to access the Demo and Documentation.
-            </fuse-alert>
 
             <!-- Alert -->
             <fuse-alert
@@ -118,36 +109,34 @@
                 <!-- Separator -->
                 <div class="flex items-center mt-8">
                     <div class="flex-auto mt-px border-t"></div>
-                    <div class="mx-2 text-secondary">Or continue with</div>
+                    <div class="mx-2 text-secondary">Our social media</div>
                     <div class="flex-auto mt-px border-t"></div>
                 </div>
 
                 <!-- Single sign-on buttons -->
                 <div class="flex items-center mt-8 space-x-4">
-                    <button
+                    <a
                         class="flex-auto"
                         type="button"
-                        mat-stroked-button>
+                        mat-stroked-button
+                        href="https://www.facebook.com/veggiefruitsro"
+                        target="_blank"
+                        >
                         <mat-icon
                             class="icon-size-5"
                             [svgIcon]="'feather:facebook'"></mat-icon>
-                    </button>
-                    <button
+                    </a>
+                    <a
                         class="flex-auto"
                         type="button"
-                        mat-stroked-button>
+                        mat-stroked-button
+                        href="https://www.vegandfood.com/"
+                        target="_blank"
+                        >
                         <mat-icon
                             class="icon-size-5"
-                            [svgIcon]="'feather:twitter'"></mat-icon>
-                    </button>
-                    <button
-                        class="flex-auto"
-                        type="button"
-                        mat-stroked-button>
-                        <mat-icon
-                            class="icon-size-5"
-                            [svgIcon]="'feather:github'"></mat-icon>
-                    </button>
+                            [svgIcon]="'feather:globe'"></mat-icon>
+                    </a>
                 </div>
             </form>
         </div>
