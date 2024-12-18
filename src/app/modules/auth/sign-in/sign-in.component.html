@@ -35,16 +35,16 @@
 
                 <!-- Email field -->
                 <mat-form-field class="w-full">
-                    <mat-label>Email address</mat-label>
+                    <mat-label>Account Name</mat-label>
                     <input
-                        id="email"
+                        id="name"
                         matInput
-                        [formControlName]="'email'">
-                    <mat-error *ngIf="signInForm.get('email').hasError('required')">
-                        Email address is required
+                        [formControlName]="'name'">
+                    <mat-error *ngIf="signInForm.get('name').hasError('required')">
+                        Account Name is required
                     </mat-error>
-                    <mat-error *ngIf="signInForm.get('email').hasError('email')">
-                        Please enter a valid email address
+                    <mat-error *ngIf="signInForm.get('name').hasError('email')">
+                        Please enter a valid account name
                     </mat-error>
                 </mat-form-field>
 
@@ -78,12 +78,6 @@
 
                 <!-- Actions -->
                 <div class="inline-flex items-center justify-between w-full mt-1.5">
-                    <mat-checkbox
-                        class="-ml-2"
-                        [color]="'primary'"
-                        [formControlName]="'rememberMe'">
-                        Remember me
-                    </mat-checkbox>
                     <a
                         class="text-md font-medium text-primary-500 hover:underline"
                         [routerLink]="['/forgot-password']">Forgot password?

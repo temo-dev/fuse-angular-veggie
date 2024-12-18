@@ -1,9 +1,9 @@
 {
-    "name": "fuse-angular",
-    "version": "19.0.0",
-    "description": "Fuse - Angular Admin Template and Starter Project",
-    "author": "https://themeforest.net/user/srcn",
-    "license": "https://themeforest.net/licenses/standard",
+    "name": "veggie-system",
+    "version": "1.0.0",
+    "description": "veggie asian food",
+    "author": "https://hatss.eu",
+    "license": "https://hatss.eu",
     "private": true,
     "scripts": {
         "ng": "ng",

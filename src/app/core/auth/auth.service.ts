@@ -57,19 +57,23 @@ export class AuthService
      *
      * @param credentials
      */
-    signIn(credentials: { email: string; password: string }): Observable<any>
+    signIn(credentials: { name: string; password: string }): Observable<any>
     {
+        const input = JSON.stringify({
+            user_name: credentials.name,
+            password: credentials.password
+        })
         // Throw error, if the user is already logged in
         if ( this._authenticated )
         {
             return throwError('User is already logged in.');
         }
 
-        return this._httpClient.post('api/auth/sign-in', credentials).pipe(
+        return this._httpClient.post(`http://localhost:8080/v1/auth/login`, input).pipe(
             switchMap((response: any) =>
             {
                 // Store the access token in the local storage
-                this.accessToken = response.accessToken;
+                this.accessToken = response.token;
 
                 // Set the authenticated flag to true
                 this._authenticated = true;
