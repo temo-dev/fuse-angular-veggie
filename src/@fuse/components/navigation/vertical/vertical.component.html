@@ -38,7 +38,8 @@
                 <ng-container *ngIf="item.type === 'basic'">
                     <fuse-vertical-navigation-basic-item
                         [item]="item"
-                        [name]="name"></fuse-vertical-navigation-basic-item>
+                        [name]="name">
+                    </fuse-vertical-navigation-basic-item>
                 </ng-container>
 
                 <!-- Collapsable -->
@@ -68,7 +69,8 @@
                 <ng-container *ngIf="item.type === 'spacer'">
                     <fuse-vertical-navigation-spacer-item
                         [item]="item"
-                        [name]="name"></fuse-vertical-navigation-spacer-item>
+                        [name]="name">
+                    </fuse-vertical-navigation-spacer-item>
                 </ng-container>
 
             </ng-container>
@@ -79,7 +81,6 @@
         <div class="fuse-vertical-navigation-content-footer">
             <ng-content select="[fuseVerticalNavigationContentFooter]"></ng-content>
         </div>
-
     </div>
 
     <!-- Footer -->
@@ -113,10 +114,7 @@
                         [name]="name"
                         [autoCollapse]="autoCollapse"></fuse-vertical-navigation-aside-item>
                 </ng-container>
-
             </ng-container>
-
         </ng-container>
-
     </div>
 </ng-container>

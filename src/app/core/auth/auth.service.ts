@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { AuthUtils } from 'app/core/auth/auth.utils';
 import { UserService } from 'app/core/user/user.service';
 import { catchError, Observable, of, switchMap, throwError } from 'rxjs';
-
+import {enviroment} from '../../../../development.env';
 @Injectable({providedIn: 'root'})
 export class AuthService
 {
@@ -69,7 +69,7 @@ export class AuthService
             return throwError('User is already logged in.');
         }
 
-        return this._httpClient.post(`http://localhost:8080/v1/auth/login`, input).pipe(
+        return this._httpClient.post(`${enviroment.apiUrl}/v1/auth/login`, input).pipe(
             switchMap((response: any) =>
             {
                 // Store the access token in the local storage
@@ -79,7 +79,13 @@ export class AuthService
                 this._authenticated = true;
 
                 // Store the user on the user service
-                this._userService.user = response.user;
+                this._userService.user =  {
+                    id    : 'cfaad35d-07a3-4447-a6c3-d8c3d54fd5df',
+                    name  : 'Brian Hughes',
+                    email : 'hughes.brian@company.com',
+                    avatar: 'assets/images/avatars/brian-hughes.jpg',
+                    status: 'online',
+                };
 
                 // Return a new observable with the response
                 return of(response);
@@ -147,9 +153,15 @@ export class AuthService
      *
      * @param user
      */
-    signUp(user: { name: string; email: string; password: string; company: string }): Observable<any>
+    signUp(user: { name: string; password: string, email: string }): Observable<any>
     {
-        return this._httpClient.post('api/auth/sign-up', user);
+        const input = JSON.stringify({
+            user_name: user.name,
+            password: user.password,
+            email:  user.email,
+            status: 'inactive'
+        })
+        return this._httpClient.post(`${enviroment.apiUrl}/v1/users`, input);
     }
 
     /**
