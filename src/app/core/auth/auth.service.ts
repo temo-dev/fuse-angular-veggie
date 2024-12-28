@@ -77,13 +77,11 @@ export class AuthService
 
                 // Set the authenticated flag to true
                 this._authenticated = true;
-
                 // Store the user on the user service
                 this._userService.user =  {
-                    id    : 'cfaad35d-07a3-4447-a6c3-d8c3d54fd5df',
-                    name  : 'Brian Hughes',
-                    email : 'hughes.brian@company.com',
-                    avatar: 'assets/images/avatars/brian-hughes.jpg',
+                    id    : response.data.user_id,
+                    name  : response.data.user_name,
+                    email : response.data.email,
                     status: 'online',
                 };
 
@@ -179,24 +177,22 @@ export class AuthService
      */
     check(): Observable<boolean>
     {
+       
         // Check if the user is logged in
         if ( this._authenticated )
         {
             return of(true);
         }
-
         // Check the access token availability
         if ( !this.accessToken )
         {
             return of(false);
         }
-
         // Check the access token expire date
         if ( AuthUtils.isTokenExpired(this.accessToken) )
         {
             return of(false);
         }
-
         // If the access token exists, and it didn't expire, sign in using it
         return this.signInUsingToken();
     }

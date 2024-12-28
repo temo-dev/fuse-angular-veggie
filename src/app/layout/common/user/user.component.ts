@@ -83,6 +83,7 @@ export class UserComponent implements OnInit, OnDestroy
      */
     updateUserStatus(status: string): void
     {
+        console.log('user',this.user)
         // Return if user is not available
         if ( !this.user )
         {
