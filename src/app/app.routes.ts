@@ -63,6 +63,12 @@ export const appRoutes: Route[] = [
         },
         children: [
             {path: 'dashboard', loadChildren: () => import('app/modules/admin/dashboard/dashboard.routes')},
+            {path:'product',
+                children:[
+                    {path:'dashboard', loadChildren: () => import('app/modules/admin/product/product.routes')},
+                    {path:'create', loadChildren: () => import('app/modules/admin/product/create-product/create-product.routes')},
+                ]
+            }
         ]
-    }
+    },
 ];

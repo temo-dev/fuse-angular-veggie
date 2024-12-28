@@ -3,20 +3,37 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Dashboard-1',
+        id   : 'dashboard',
+        title: 'Dashboard',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/example'
+        link : '/dashboard'
     },
     {
-        id   : 'example-2',
-        title: 'Dashboard-2',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/example-2',
+        id   : 'product',
+        title: 'Product',
+        type : 'collapsable',
+        icon : 'heroicons_outline:cube',
+        link : '/product',
+        children:[
+            {
+                id   : 'product.dashboard',
+                title: 'Product Dashboard',
+                type : 'basic',
+                icon : 'heroicons_outline:chart-pie',
+                link : '/product/dashboard',
+            },
+            {
+                id   : 'product.create',
+                title: 'Create Product',
+                type : 'basic',
+                icon : 'heroicons_outline:plus',
+                link : '/product/create',
+            },
+        ]
     }
 ];
+///==============
 export const compactNavigation: FuseNavigationItem[] = [
     {
         id   : 'example',
