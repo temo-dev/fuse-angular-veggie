@@ -1,121 +1,172 @@
-<mat-card appearance="outline" class="m-auto my-4">
-    <mat-card-header>
-        <mat-icon
-            class="icon-size-5"
-            matPrefix
-            [svgIcon]="'heroicons_solid:cube'">
-        </mat-icon>
-        <mat-card-title class="font-bold text-xl mx-2">Tạo Sản Phẩm Mới</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form class="flex flex-col mt-4 px-8 pt-10 bg-card shadow rounded overflow-hidden">
-            <p class="text-lg font-medium">Thông tin cơ bản</p>
-            <p class="text-secondary mb-6">
-                Nhập thông tin cơ bản của sản phẩm
-            </p>
-            <div class="flex">
-                <mat-form-field class="flex-auto">
-                    <input
-                        matInput
-                        [placeholder]="'Tên sản phẩm'">
-                    <mat-icon
-                        class="icon-size-5"
-                        matPrefix
-                        [svgIcon]="'heroicons_solid:cube'">
-                    </mat-icon>
-                </mat-form-field>
-            </div>
-            <div class="flex flex-col gt-xs:flex-row">
+<div class="m-auto my-4">
+    <mat-card appearance="outline">
+        <mat-card-header>
+            <mat-icon
+                class="icon-size-5"
+                matPrefix
+                [svgIcon]="'heroicons_solid:cube'"
+            >
+            </mat-icon>
+            <mat-card-title class="font-bold text-xl mx-5 mb-4"
+                >Tạo Sản Phẩm Mới
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="py-4 min-w-192 max-h-200 overflow-scroll">
+            <form
+                class="flex flex-col mt-4 px-8 pt-10 bg-card shadow rounded overflow-hidden"
+            >
+                <p class="text-lg font-medium">Thông tin cơ bản</p>
+                <p class="text-secondary mb-6">
+                    Nhập thông tin cơ bản của sản phẩm
+                </p>
+                <div class="flex">
+                    <mat-form-field class="flex-auto">
+                        <input matInput [placeholder]="'Tên sản phẩm'" />
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:cube'"
+                        >
+                        </mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="flex flex-col gt-xs:flex-row">
+                    <div class="flex">
+                        <mat-form-field class="flex-auto">
+                            <input matInput [placeholder]="'Mã sản phẩm'" />
+                            <mat-icon
+                                class="icon-size-5"
+                                matPrefix
+                                [svgIcon]="'heroicons_solid:command-line'"
+                            >
+                            </mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field class="flex-auto gt-xs:pl-3">
+                        <mat-select [placeholder]="'Xuất Xứ'">
+                            <mat-option value="language-1">Việt Nam</mat-option>
+                            <mat-option value="language-2">Thái Lan</mat-option>
+                            <mat-option value="language-3">Hàn Quốc</mat-option>
+                        </mat-select>
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:language'"
+                        ></mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="flex-auto gt-xs:pl-3">
+                        <mat-select [placeholder]="'Nhà Cung Cấp'">
+                            <mat-option value="language-1">Asian Express Food</mat-option>
+                            <mat-option value="language-2">Beagley Copperman</mat-option>
+                            <mat-option value="language-3">Oriental Merchant</mat-option>
+                        </mat-select>
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:language'"
+                        ></mat-icon>
+                    </mat-form-field>
+                    <div class="flex">
+                        <mat-form-field class="flex-auto">
+                            <input
+                                matInput
+                                [placeholder]="'Giá nhập sản phẩm'"
+                            />
+                            <mat-icon
+                                class="icon-size-5"
+                                matPrefix
+                                [svgIcon]="'heroicons_solid:circle-stack'"
+                            >
+                            </mat-icon>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <mat-divider class="mt-6 mb-10"></mat-divider>
+                <p class="text-lg font-medium">
+                    Kiểm tra lại các thông tin trước khi lưu
+                </p>
+                <div class="p-6">
+                    <nz-upload nzType="drag" [nzMultiple]="true">
+                        <p class="ant-upload-drag-icon">
+                            <span nz-icon nzType="inbox"></span>
+                        </p>
+                        <p class="ant-upload-text">Tải ảnh sản phẩm</p>
+                        <p class="ant-upload-hint">
+                            Hệ thống hỗ trợ ảnh với các định dạng jpg, jpeg, png
+                        </p>
+                    </nz-upload>
+                </div>
+                <mat-divider class="mt-6 mb-10"></mat-divider>
+                <p class="text-lg font-medium">Thông tin Vận Chuyển</p>
+                <p class="text-secondary mb-6">
+                    Thông tin liên quan đến sản phẩm
+                </p>
                 <div class="flex">
                     <mat-form-field class="flex-auto">
                         <input
                             matInput
-                            [placeholder]="'Mã sản phẩm'">
+                            [placeholder]="'Số lượng sản phẩm trên 1 thùng'"
+                        />
                         <mat-icon
                             class="icon-size-5"
                             matPrefix
-                            [svgIcon]="'heroicons_solid:command-line'">
+                            [svgIcon]="'heroicons_solid:circle-stack'"
+                        >
                         </mat-icon>
                     </mat-form-field>
                 </div>
-                <mat-form-field class="flex-auto gt-xs:pl-3">
-                    <mat-select [placeholder]="'Xuất Xứ'">
-                        <mat-option value="language-1">Việt Nam</mat-option>
-                        <mat-option value="language-2">Thái Lan</mat-option>
-                        <mat-option value="language-3">Hàn Quốc</mat-option>
-                    </mat-select>
-                    <mat-icon
-                        class="icon-size-5"
-                        matPrefix
-                        [svgIcon]="'heroicons_solid:language'"></mat-icon>
-                </mat-form-field>
-                <div class="flex">
-                    <mat-form-field class="flex-auto">
+                <div class="flex flex-col gt-xs:flex-row">
+                    <mat-form-field class="flex-auto gt-xs:pr-3">
                         <input
                             matInput
-                            [placeholder]="'Giá nhập sản phẩm'">
+                            [placeholder]="'Kích thước của thùng'"
+                        />
                         <mat-icon
                             class="icon-size-5"
                             matPrefix
-                            [svgIcon]="'heroicons_solid:circle-stack'">
-                        </mat-icon>
+                            [svgIcon]="'heroicons_solid:swatch'"
+                        ></mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="flex-auto gt-xs:pl-3">
+                        <input matInput [placeholder]="'Cân nặng của thùng'" />
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:archive-box'"
+                        ></mat-icon>
                     </mat-form-field>
                 </div>
-            </div>
-        
-            <mat-divider class="mt-6 mb-10"></mat-divider>
-        
-            <p class="text-lg font-medium">Thông tin Vận Chuyển</p>
-            <p class="text-secondary mb-6">
-                Thông tin liên quan đến sản phẩm
-            </p>
-            <div class="flex">
-                <mat-form-field class="flex-auto">
-                    <input
-                        matInput
-                        [placeholder]="'Số lượng sản phẩm trên 1 thùng'">
-                    <mat-icon
-                        class="icon-size-5"
-                        matPrefix
-                        [svgIcon]="'heroicons_solid:circle-stack'">
-                    </mat-icon>
-                </mat-form-field>
-            </div>
-            <div class="flex flex-col gt-xs:flex-row">
-                <mat-form-field class="flex-auto gt-xs:pr-3">
-                    <input
-                        matInput
-                        [placeholder]="'Kích thước của thùng'">
-                    <mat-icon
-                        class="icon-size-5"
-                        matPrefix
-                        [svgIcon]="'heroicons_solid:swatch'"></mat-icon>
-                </mat-form-field>
-                <mat-form-field class="flex-auto gt-xs:pl-3">
-                    <input
-                        matInput
-                        [placeholder]="'Cân nặng của thùng'">
-                    <mat-icon
-                        class="icon-size-5"
-                        matPrefix
-                        [svgIcon]="'heroicons_solid:archive-box'"></mat-icon>
-                </mat-form-field>
-            </div>
-        
-            <mat-divider class="mt-6 mb-10"></mat-divider>
-        
-            <p class="text-lg font-medium">Kiểm tra lại các thông tin trước khi lưu</p>
-            <div class="flex items-center justify-end border-t -mx-8 mt-8 px-8 py-5 bg-gray-50 dark:bg-gray-700">
-                <button mat-button>
-                    Cancel
-                </button>
-                <button
-                    class="px-6 ml-3"
-                    mat-flat-button
-                    [color]="'primary'">
-                    Save
-                </button>
-            </div>
-        </form>
-    </mat-card-content>
-</mat-card>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <div class="mt-4 flex justify-between">
+        <div>
+            <button mat-fab extended color="warn">
+                <mat-icon
+                    class="icon-size-5"
+                    [svgIcon]="'heroicons_solid:x-mark'"
+                >
+                </mat-icon>
+                Hủy Bỏ
+            </button>
+            <button mat-fab extended color="primary" class="mx-3">
+                <mat-icon
+                    class="icon-size-5"
+                    [svgIcon]="'heroicons_solid:archive-box'"
+                >
+                </mat-icon>
+                Lưu Sản Phẩm
+            </button>
+        </div>
+        <div>
+            <button mat-fab extended color="primary" class="mx-3">
+                <mat-icon
+                    class="icon-size-5"
+                    [svgIcon]="'heroicons_solid:archive-box'"
+                >
+                </mat-icon>
+                Import Sản Phẩm bằng Excel
+            </button>
+        </div>
+    </div>
+</div>

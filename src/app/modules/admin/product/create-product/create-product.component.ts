@@ -11,10 +11,25 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 @Component({
   selector: 'app-create-product',
   standalone: true,
-  imports: [CommonModule,FormsModule,MatButtonModule,MatCheckboxModule,MatOptionModule,MatDividerModule,MatFormFieldModule,MatIconModule,MatInputModule,MatRadioModule,MatSelectModule,MatCardModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatOptionModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatCardModule,
+    NzUploadModule
+  ],
   encapsulation: ViewEncapsulation.None,
   templateUrl: './create-product.component.html',
 })
