@@ -17,14 +17,14 @@ RUN npm ci --legacy-peer-deps
 COPY . .
 
 # Build the Angular app for production
-RUN ng build --output-path=dist/browser
+RUN ng build --output-path=dist/browser --base-href=/
 
 # Stage 2: Serve the app using NGINX
 FROM nginx:1.23
 
 # Copy built Angular app from the first stage
 COPY --from=build /app/dist/browser /usr/share/nginx/html
-
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 # Expose port 80
 EXPOSE 80
 
